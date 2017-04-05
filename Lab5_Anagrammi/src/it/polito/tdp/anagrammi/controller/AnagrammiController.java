@@ -28,6 +28,19 @@ public class AnagrammiController {
 
 	@FXML
 	void doCalcolaAnagrammi(ActionEvent event) {
+		
+		txtCorretti.clear();
+		txtErrati.clear();
+		
+		String parola = txtInput.getText();
+		//Se ti aggiugi controlli quando puoi
+		model.setParola(parola);
+		
+		for(String s : model.paroleCorrette())
+			     txtCorretti.appendText(s+"\n");
+		
+		for(String s : model.paroleErrate())
+		     txtErrati.appendText(s+"\n");
 
 	}
 
